@@ -1,0 +1,87 @@
+<template>
+    <lightning-card>
+        <div class="slds-m-around_small">
+            <!-- Picklist action read/update/create-->
+            <lightning-combobox
+            name="actionCombo"
+            label="Action"
+            value={actionValue}
+            options={actionOptions}
+            onchange={handleActionChange}>
+            </lightning-combobox>
+            <!-- Security Method with security enforced, strip inaccess, strip all or none -->
+            <template if:true={displaySecurityMethod}>
+                
+                <lightning-combobox
+                name="accountCombo"
+                label="Security Method"
+                value={securityMethodValue}
+                options={securityMethodOptions}
+                onchange={handleSecurityMethodChange}>
+                </lightning-combobox>
+            </template>
+            <!-- Account Selector -->
+            <template if:true={displayAccountOption}>
+                <lightning-combobox
+                name="accountCombo"
+                label="Account"
+                value={accountValue}
+                options={accountOptions}
+                onchange={handleAccountChange}>
+                </lightning-combobox>
+            </template>
+            <template if:true={displayInput}>
+                <div class="slds-m-top_small slds-box">
+                    <h3>Account Input</h3>
+                    <lightning-input type="text" label="Account Name" onchange={handleNameChange}></lightning-input>
+                    <lightning-input type="text" label="Account Number" onchange={handleAccountNumberChange}></lightning-input>
+                    <lightning-combobox
+                        name="accountCombo"
+                        label="Type"
+                        value={typeValue}
+                        options={typeOptions}
+                        onchange={handleTypeChange}>
+                    </lightning-combobox>
+                    <lightning-combobox
+                    name="accountCombo"
+                    label="Industry"
+                    value={industryValue}
+                    options={industryOptions}
+                    onchange={handleIndustryChange}>
+                </lightning-combobox>
+                <lightning-combobox
+                name="accountCombo"
+                label="Rating"
+                value={ratingValue}
+                options={ratingOptions}
+                onchange={handleRatingChange}>
+            </lightning-combobox>
+                </div>
+            </template>
+            <!-- Execute Button-->
+            <template if:true={displayButton}>
+                <div class="slds-m-top_small">
+                    <lightning-button variant="brand" label="Execute" title="Execute" onclick={handleClick} class="slds-m-top_small"></lightning-button>
+                </div>
+            </template>
+            <!-- Display The query that's executed Query Execution -->
+
+            <!-- -->
+
+
+            <!-- Output of Read Statement -->
+            <template if:true={displayOutput}>
+                <div class="slds-m-top_small">
+                <div class="slds-text-heading_medium">Results</div></br>
+                <p><span style="font-weight: bold">Code Executed:</span><br/> {queryExecuted}</p><br/>
+                <p><span style="font-weight: bold">Query Results:</span><br/> {queryResults}</p><br/>
+                <p><span style="font-weight: bold">Modified Indexes (getModifiedIndexes):</span><br/>{modifiedIndexes}</p><br/>
+                <p><span style="font-weight: bold"> Fields (getRemovedFields):</span><br/>{removedFields}</p>
+            </div>
+            </template>
+
+            <!-- Input Data -->
+            
+        </div>
+    </lightning-card>
+</template>
