@@ -1,0 +1,26 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef1"
+            },
+            "Name": "Test Account 1",
+            "AccountNumber": "123000",
+            "Industry": "Banking",
+            "Type": "Prospect",
+            "Rating": "Hot"
+        },
+        {
+            "attributes": {
+                "type": "Account",
+                "referenceId": "AccountRef2"
+            },
+            "Name": "Test Account 2",
+            "AccountNumber": "134000",
+            "Industry": "Technology",
+            "Type": "Technology Partner",
+            "Rating": "Warm"
+        }
+    ]
+}
