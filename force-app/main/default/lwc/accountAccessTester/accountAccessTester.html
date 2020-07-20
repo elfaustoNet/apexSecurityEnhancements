@@ -73,7 +73,7 @@
             <template if:true={displayOutput}>
                 <div class="slds-m-top_small">
                 <div class="slds-text-heading_medium">Results</div></br>
-                <p><span style="font-weight: bold">Code Executed:</span><br/> {queryExecuted}</p><br/>
+                <p><span style="font-weight: bold">Code Executed:</span><br/> <lightning-formatted-rich-text value={queryExecuted}></lightning-formatted-rich-text></p><br/>
                 <p><span style="font-weight: bold">Query Results:</span><br/> {queryResults}</p><br/>
                 <p><span style="font-weight: bold">Modified Indexes (getModifiedIndexes):</span><br/>{modifiedIndexes}</p><br/>
                 <p><span style="font-weight: bold">Removed Fields (getRemovedFields):</span><br/>{removedFields}</p>

@@ -46,7 +46,7 @@ public with sharing class AccountAccessTesterController {
             }*/            
             List<Account> acctList = securityDecision2.getRecords();
             insert acctList;
-            results.queryExecuted = 'SObjectAccessDecision securityDecision2 = Security.stripInaccessible(AccessType.CREATABLE,accountRecord)\n List<Account> acctList = securityDecision.getRecords();\n insert acctList;';
+            results.queryExecuted = 'SObjectAccessDecision securityDecision2 = Security.stripInaccessible(AccessType.CREATABLE,new List&lt;Account&gt;{accountRecord})' + '<br/>'+ 'List&lt;Account&gt; acctList = securityDecision.getRecords();<br/> insert acctList;';
             results.result = JSON.serialize(acctList);
             results.modifiedIndexes = String.valueOF(securityDecision2.getModifiedIndexes());
             results.removedFields = JSON.serialize(securityDecision2.getRemovedFields());
